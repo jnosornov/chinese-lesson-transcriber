@@ -1,0 +1,5 @@
+.env
+tokens/
+transcripts/
+logs/
+node_modules/
