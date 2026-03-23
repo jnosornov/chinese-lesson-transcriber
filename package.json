@@ -2,6 +2,7 @@
   "name": "chinese-lesson-transcriber",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js"
