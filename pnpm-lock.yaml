@@ -17,6 +17,9 @@ importers:
       groq-sdk:
         specifier: ^1.1.1
         version: 1.1.1
+      pinyin-pro:
+        specifier: ^3.28.0
+        version: 3.28.0
 
 packages:
 
@@ -171,6 +174,9 @@ packages:
   object-inspect@1.13.4:
     resolution: {integrity: sha512-W67iLl4J2EXEGTbfeHCffrjDfitvLANg0UlX3wFUUSTx92KXRFegMHUVgSqE+wvhAbi4WqjGg9czysTV2Epbew==}
     engines: {node: '>= 0.4'}
+
+  pinyin-pro@3.28.0:
+    resolution: {integrity: sha512-mMRty6RisoyYNphJrTo3pnvp3w8OMZBrXm9YSWkxhAfxKj1KZk2y8T2PDIZlDDRsvZ0No+Hz6FI4sZpA6Ey25g==}
 
   qs@6.15.0:
     resolution: {integrity: sha512-mAZTtNCeetKMH+pSjrb76NAM8V9a05I9aBZOHztWy/UqcJdQYNsf59vrRKWnojAT9Y+GbIvoTBC++CPHqpDBhQ==}
@@ -370,6 +376,8 @@ snapshots:
       formdata-polyfill: 4.0.10
 
   object-inspect@1.13.4: {}
+
+  pinyin-pro@3.28.0: {}
 
   qs@6.15.0:
     dependencies:
