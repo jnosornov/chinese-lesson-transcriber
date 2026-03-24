@@ -18,5 +18,5 @@ export async function log({ videoPath, transcriptPath, driveLink }) {
   ].join('\n');
 
   await mkdir(LOGS_DIR, { recursive: true });
-  await appendFile(LOG_PATH, entry);
+  await appendFile(LOG_PATH, entry + '\n');
 }

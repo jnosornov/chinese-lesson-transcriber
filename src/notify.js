@@ -15,7 +15,7 @@ const TITLES = {
 function send(type, message) {
   const title = TITLES[type];
   const sound = SOUNDS[type];
-  const script = `display notification "${message}" with title "${title}" sound name "${sound}"`;
+  const script = `display notification "${message.replace(/"/g, '\\"')}" with title "${title}" sound name "${sound}"`;
 
   execFile('osascript', ['-e', script], (err) => {
     if (err) {

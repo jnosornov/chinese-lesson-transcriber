@@ -4,6 +4,7 @@ import { stat, mkdir, writeFile, unlink } from 'fs/promises';
 import { execFile } from 'child_process';
 import { promisify } from 'util';
 import { pinyin } from 'pinyin-pro';
+import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import 'dotenv/config';
@@ -25,7 +26,7 @@ function formatTimestamp(seconds) {
 
 async function extractAudio(videoPath) {
   const baseName = path.basename(videoPath, path.extname(videoPath));
-  const audioPath = path.join('/tmp', `${baseName}_audio.mp3`);
+  const audioPath = path.join(os.tmpdir(), `${baseName}_audio.mp3`);
   await execFileAsync('ffmpeg', [
     '-i', videoPath,
     '-vn',          // strip video

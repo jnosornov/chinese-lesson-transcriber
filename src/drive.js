@@ -13,7 +13,7 @@ function getDriveClient(authClient) {
 
 async function findOrCreateFolder(drive) {
   const { data } = await drive.files.list({
-    q: `name='${FOLDER_NAME}' and mimeType='application/vnd.google-apps.folder' and trashed=false`,
+    q: `name='${FOLDER_NAME.replace(/'/g, "\\'")}' and mimeType='application/vnd.google-apps.folder' and trashed=false`,
     fields: 'files(id)',
   });
 
@@ -53,7 +53,7 @@ export async function uploadTranscript(authClient, transcriptPath) {
   const fileName = path.basename(transcriptPath);
 
   const { data: existing } = await drive.files.list({
-    q: `name='${fileName}' and '${folderId}' in parents and trashed=false`,
+    q: `name='${fileName.replace(/'/g, "\\'")}' and '${folderId}' in parents and trashed=false`,
     fields: 'files(id,webViewLink)',
   });
 
